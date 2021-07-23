@@ -1,0 +1,25 @@
+<h3><a class="btn btn-warning" href="/appointment"><i class="fa fa-plus"></i>+ Create New</a>  Booked Appointments</h3>
+<table class="table bg-light table-striped" style="width: 55vw">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Date</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.email}}</td>
+            <td><a href="/appointment/{{this._id}}"> <button class="btn btn-success">Edit</button> </a> </td>
+            <td><a href="/appointment/delete/{{this._id}}"><button onclick="return confirm('Delete the post ???');" class="btn btn-danger"> Delete  </button></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
